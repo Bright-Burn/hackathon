@@ -25,12 +25,53 @@ document.addEventListener('DOMContentLoaded' ,function() {
         Game_Interval = setInterval(draw, 50);
     }
 
-    // function StopMatrix() {
-    //     clearInterval(Game_Interval);
-    // }
-    // setTimeout(() => {StopMatrix()}, 3000)
-
 });
-setTimeout(() => {
-    document.querySelector('.mainContainer').style.display = 'block'
-}, 50)
+
+
+document.getElementById('MAIN_CONTAINER').style.display = 'block'
+
+document.getElementById('CASE_1').addEventListener('click', createCaseModal1)
+
+document.getElementById('CLOSE_CASE_MODAL_BTN1').addEventListener('click', closeCaseModal1)
+document.getElementById('CASE_2').addEventListener('click', createCaseModal2)
+
+document.getElementById('CLOSE_CASE_MODAL_BTN2').addEventListener('click', closeCaseModal2)
+document.getElementsByTagName('body')[0].addEventListener('click', function () {
+    closeCaseModal1()
+    closeCaseModal2()
+    closeSolutionModal()
+})
+document.getElementsByTagName('body')[0].addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeCaseModal1()
+        closeCaseModal2()
+        closeSolutionModal()
+    }
+})
+document.getElementById('CASE_MODAL1').addEventListener('click', function (e) {
+    e.stopPropagation()
+})
+document.getElementById('CASE_MODAL2').addEventListener('click', function (e) {
+    e.stopPropagation()
+})
+document.getElementById('SOLUTION').addEventListener('click', function (e) {
+    e.stopPropagation()
+    document.getElementById('SOLUTION_FRAME').style.display = 'block'
+})
+function createCaseModal1(e) {
+    e.stopPropagation()
+    document.getElementById('CASE_MODAL1').style.display = 'flex'
+}
+function closeCaseModal1() {
+    document.getElementById('CASE_MODAL1').style.display = 'none'
+}
+function createCaseModal2(e) {
+    e.stopPropagation()
+    document.getElementById('CASE_MODAL2').style.display = 'flex'
+}
+function closeCaseModal2() {
+    document.getElementById('CASE_MODAL2').style.display = 'none'
+}
+function closeSolutionModal() {
+    document.getElementById('SOLUTION_FRAME').style.display = 'none'
+}

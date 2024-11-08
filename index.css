@@ -1,15 +1,21 @@
 @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
 }
-
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 .mainContainer {
     display: none;
@@ -36,10 +42,15 @@ body {
             0 0 1ex rgba(51, 255, 51, 1),
             0 0 2px rgba(255, 255, 255, 0.8);
 }
-
-.footer {
-    height: 50px;
+#SOLUTION_FRAME {
+    z-index: 100;
+    display: none;
+    position: relative;
+    background-color: #fff;
+    animation: fadeInUp 1s forwards; /* Анимация */
 }
+
+
 
 .noise {
     pointer-events: none;
@@ -131,4 +142,61 @@ a::after {
 
 .errorcode {
     color: white;
+}
+
+.caseModal {
+    position: relative;
+    display: none;
+    transition: 3s;
+    width: 900px;
+    height: 800px;
+    z-index: 15;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 16px 0 16px 16px;
+    opacity: 0; /* Начальная прозрачность */
+    transform: translateY(-20px); /* Сдвиг вверх */
+    animation: fadeInUp 1s forwards; /* Анимация */
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Начальная прозрачность */
+        transform: translateY(-20px); /* Начальная позиция */
+    }
+    to {
+        opacity: 1; /* Конечная прозрачность */
+        transform: translateY(0); /* Конечная позиция */
+    }
+}
+.modalContent {
+    overflow-y: scroll;
+}
+.ulContent {
+    padding: 15px;
+}
+.closeBtn {
+    position: absolute;
+    right: -40px;
+    top: -32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.closeBtn:hover {
+    opacity: 1;
+}
+.closeBtn:before, .closeBtn:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
+}
+.closeBtn:before {
+    transform: rotate(45deg);
+}
+.closeBtn:after {
+    transform: rotate(-45deg);
 }
