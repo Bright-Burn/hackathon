@@ -42,6 +42,17 @@ body {
             0 0 1ex rgba(51, 255, 51, 1),
             0 0 2px rgba(255, 255, 255, 0.8);
 }
+.caseModalBG {
+    box-sizing: border-box;
+    background-color: #000000;
+    background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Inconsolata', Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-radius: 15px;
+}
 #SOLUTION_FRAME {
     z-index: 100;
     display: none;

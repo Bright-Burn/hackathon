@@ -61,6 +61,7 @@ document.getElementById('SOLUTION').addEventListener('click', function (e) {
 function createCaseModal1(e) {
     e.stopPropagation()
     document.getElementById('CASE_MODAL1').style.display = 'flex'
+    closeCaseModal2()
 }
 function closeCaseModal1() {
     document.getElementById('CASE_MODAL1').style.display = 'none'
@@ -68,6 +69,7 @@ function closeCaseModal1() {
 function createCaseModal2(e) {
     e.stopPropagation()
     document.getElementById('CASE_MODAL2').style.display = 'flex'
+    closeCaseModal1()
 }
 function closeCaseModal2() {
     document.getElementById('CASE_MODAL2').style.display = 'none'
