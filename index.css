@@ -200,3 +200,26 @@ a::after {
 .closeBtn:after {
     transform: rotate(-45deg);
 }
+.cursor {
+    position: relative;
+    font-size: 24px;
+}
+
+.cursor::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: -14px; /* Расстояние от текста */
+    width: 5px; /* Ширина курсора */
+    height: 1em; /* Высота курсора */
+    background-color: white; /* Цвет курсора */
+    animation: blink 1s step-end infinite; /* Анимация мигания */
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* Полная видимость */
+    }
+    50% {
+        opacity: 0; /* Полная невидимость */
+    }
+}
