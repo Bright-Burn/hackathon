@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded' ,function() {
-    var s = window.screen;  //Переменная для выясняющая размер вашего экрана
-    var width = bg.width = window.outerWidth;
+    var bodyEl = document.body.getClientRects();
 
-    var height = bg.height =  window.outerHeight
+    var width = bg.width = bodyEl[0].width;
+
+    var height = bg.height =  bodyEl[0].height
     var letters = Array(128).join(1).split('');
 
     var draw = function () {

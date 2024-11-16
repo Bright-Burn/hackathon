@@ -23,7 +23,12 @@ body {
     right: 0;
     top: 0;
     height: 100vh;
-    width: 600px;
+    width: 35%;
+}
+@media (min-width: 450px) {
+    .mainContainer {
+        width: 50%;
+    }
 }
 .header {
     height: 50px;
