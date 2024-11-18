@@ -18,21 +18,23 @@ body {
     align-items: center;
 }
 .mainContainer {
-    display: none;
+    display: block;
     position: fixed;
     right: 0;
     top: 0;
     height: 100vh;
-    width: 35%;
+    width: 50%;
 }
-@media (min-width: 450px) {
+
+@media  screen and (min-width: 450px) {
     .mainContainer {
-        width: 50%;
+        width: 35%;
     }
 }
 .header {
     height: 50px;
 }
+
 .main  {
     box-sizing: border-box;
     height: 100%;
@@ -238,4 +240,17 @@ a::after {
     50% {
         opacity: 0; /* Полная невидимость */
     }
+}
+
+.p-v-10 {
+    padding: 10px 0 10px 0;
+}
+.p-h-10 {
+    padding: 0 10px 0 10px;
+}
+.p-b-10 {
+    padding-bottom: 10px;
+}
+.p-t-10 {
+    padding-top: 10px;
 }
